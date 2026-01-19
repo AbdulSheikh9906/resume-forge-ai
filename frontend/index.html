@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ResumeForge AI</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Orbitron:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ====== SAME UI – SHORTENED FOR CLARITY ====== */
+body{margin:0;font-family:Poppins;background:#020617;color:#f8fafc}
+.container{max-width:1200px;margin:auto;padding:30px}
+.generate-btn{width:100%;padding:22px;font-size:20px;border-radius:14px;
+background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff;border:none}
+.loading-container{display:none;margin-top:30px;text-align:center}
+.loading-spinner{width:80px;height:80px;border-radius:50%;
+border:6px solid transparent;border-top:6px solid #6366f1;
+animation:spin 1s linear infinite;margin:auto}
+@keyframes spin{to{transform:rotate(360deg)}}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1 style="font-family:Orbitron;text-align:center">ResumeForge AI</h1>
+<p style="text-align:center;color:#94a3b8">
+AI-Powered Resume Tailoring Platform
+</p>
+
+<form action="/generate" method="post" onsubmit="return validateAndSubmit()">
+
+<textarea id="jobDescription" name="job_description"
+placeholder="Paste Job Description here..."
+style="width:100%;min-height:260px;padding:20px;border-radius:12px;
+background:#020617;color:#fff;border:1px solid #334155" required></textarea>
+
+<button class="generate-btn" id="generateBtn">
+⚡ Generate Tailored Resume
+</button>
+
+</form>
+
+<div class="loading-container" id="loadingContainer">
+<div class="loading-spinner"></div>
+<p>AI is crafting your resume…</p>
+</div>
+
+</div>
+
+<script>
+function validateAndSubmit(){
+    const jd = document.getElementById("jobDescription");
+    const btn = document.getElementById("generateBtn");
+    const loader = document.getElementById("loadingContainer");
+
+    if(!jd.value.trim()){
+        jd.style.border="2px solid red";
+        jd.focus();
+        return false;
+    }
+
+    loader.style.display="block";
+    btn.disabled=true;
+    btn.innerHTML='<i class="fas fa-spinner fa-spin"></i> Processing…';
+
+    return true; // 🔥 Flask backend handles rest
+}
+</script>
+
+</body>
+</html>
