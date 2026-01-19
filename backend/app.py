@@ -19,9 +19,10 @@ def generate_resume():
     jd_text = request.form["job_description"]
     with open(JD_PATH, "w", encoding="utf-8") as f:
         f.write(jd_text)
-    subprocess.call(
-    ["cmd", "/c", "Resume_Tailor.bat"],
-    cwd=BASE_DIR
+    subprocess.run(
+    ["python", "tailor_with_gemini.py"],
+    cwd=BASE_DIR,
+    check=True
 )
     while not os.path.exists(OUTPUT_PDF):
         time.sleep(1)
