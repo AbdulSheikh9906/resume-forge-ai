@@ -44,3 +44,4 @@ isort>=5.12.0,<6.0.0      # Import sorter
 # - argparse: Command-line argument parsing
 # - typing: Type hints support
 # - traceback: Exception traceback utilities
+gunicorn
