@@ -4,21 +4,18 @@
 % Packages and Font Setup
 % ---------------------------------------------------------------
 \usepackage[empty]{fullpage}
-\usepackage[margin=0.75in]{geometry}         % Set margins
-\usepackage[T1]{fontenc}                     % Font encoding
-% Original Helvetica settings removed:
-% \usepackage[scaled]{helvet}                  % Helvetica font for modern look
-% \renewcommand{\familydefault}{\sfdefault}    % Use sans-serif throughout
-\usepackage{xcolor}                          % For colored text
-\usepackage[colorlinks=true,linkcolor=primary,urlcolor=primary,citecolor=primary]{hyperref}             % Colored hyperlinks
-\usepackage{enumitem}                        % Custom bullet lists
-\usepackage{tabularx}                        % For tables
-\usepackage{ragged2e}                        % For text alignment
-\usepackage{setspace}                        % Adjust line spacing
-\usepackage{titlesec}                        % For section formatting
-\usepackage{iftex}                           % Check if engine is pdflatex, xetex or luatex
+\usepackage[margin=0.6in]{geometry}         % Smaller margins
+\usepackage[T1]{fontenc}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=primary,urlcolor=primary,citecolor=primary]{hyperref}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{ragged2e}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{iftex}
 
-% Font settings from ABC LaTeX code
+% Font settings
 \ifPDFTeX
     \input{glyphtounicode}
     \pdfgentounicode=1
@@ -37,28 +34,29 @@
 % ---------------------------------------------------------------
 % Custom Section Title Formatting
 % ---------------------------------------------------------------
-\titleformat{\section}{\Large\bfseries\scshape\raggedright\color{primary}}{}{0em}{}[\titlerule]
-\titlespacing*{\section}{0pt}{12pt}{10pt}
+\titleformat{\section}{\large\bfseries\scshape\raggedright\color{primary}}{}{0em}{}[\titlerule] % Slightly smaller font
+\titlespacing*{\section}{0pt}{10pt}{6pt} % Reduced spacing
 
 % ---------------------------------------------------------------
 % General Formatting Settings
 % ---------------------------------------------------------------
 \setlength{\parindent}{0pt}
-\setlist[itemize]{leftmargin=*, itemsep=5pt, parsep=2pt}
-\renewcommand{\baselinestretch}{1.05}
+\setlist[itemize]{leftmargin=*, itemsep=3pt, parsep=1pt, topsep=2pt} % Tighter lists
+\renewcommand{\baselinestretch}{0.95} % Reduced line spacing
 
 % ---------------------------------------------------------------
-% Header Command with Icons (ATS-friendly: icons are for visual appeal only)
+% Header Command
 % ---------------------------------------------------------------
 \newcommand{\header}[4]{
-{\centering{\Huge\textbf{#1}}\par}
-\vspace{4pt}
+{\centering{\LARGE\textbf{#1}}\par} % Smaller header font
+\vspace{2pt}
 \centering{
+    \small % Smaller contact font
     Phone: \href{tel:#2}{#2} \quad $|$ \quad
     Email: \href{mailto:#3}{#3} \quad $|$ \quad
     LinkedIn: \href{#4}{AbdulSheikh}
 }
-\vspace{-6pt}
+\vspace{-4pt}
 }
 
 % ---------------------------------------------------------------
@@ -67,7 +65,7 @@
 \newcommand{\sectiontitle}[1]{\section*{#1}}
 
 % ---------------------------------------------------------------
-% Experience Entry Command (for concise listing)
+% Experience Entry Command
 % ---------------------------------------------------------------
 \newcommand{\experienceentry}[4]{
 \textbf{\textcolor{primary}{#1}} \hfill \textbf{#2} \\
@@ -87,7 +85,7 @@
 \begin{document}
 
 % ---------------------------------------------------------------
-% 1. CONTACT INFORMATION & PROFESSIONAL LINKS
+% 1. CONTACT INFORMATION
 % ---------------------------------------------------------------
 \header{Abdul Sheikh}{+91 8999849906}{abdulsheikh9279@gmail.com}{https://www.linkedin.com/in/abdul-sheikh-727b60246/}
 
@@ -96,113 +94,88 @@
 % ---------------------------------------------------------------
 \sectiontitle{Professional Summary}
 \begin{itemize}
-\item \textbf{Computer Science (Artificial Intelligence)} student with strong foundations in \textbf{software development and computer vision systems}.
-\item \textbf{Real-time AI applications} using TensorFlow Lite, OpenCV, and Raspberry Pi.
-\item \textbf{End-to-end systems}, integrating hardware and software for real-world use cases.
-\item \textbf{Core computer science concepts} including OOP, DBMS, and machine learning.
-\item \textbf{Secure and reliable system design} through industry-focused internships and projects.
+    \setlength\itemsep{1pt} % Very tight spacing
+    \item \textbf{Computer Science (AI)} student skilled in \textbf{software development and computer vision systems}.
+    \item Experienced in building \textbf{real-time AI applications} using TensorFlow Lite, OpenCV, and Raspberry Pi.
+    \item Strong foundation in \textbf{core CS concepts} (OOP, DBMS, ML) and \textbf{end-to-end system integration}.
 \end{itemize}
 
 % ---------------------------------------------------------------
-% 3. TECHNICAL SKILLS MATRIX
+% 3. TECHNICAL SKILLS
 % ---------------------------------------------------------------
 \sectiontitle{Technical Skills}
 \begin{itemize}[leftmargin=*]
-\item \textbf{Programming Languages/Core Concepts:} Java, Python, C, SQL, Object-Oriented Programming (OOP), Database Management Systems (DBMS), Machine Learning, Artificial Intelligence, Data Science
-\item \textbf{Web \& Development Technologies:} HTML, CSS, JavaScript, React.js, Git, GitHub
-\item \textbf{AI / ML \& Computer Vision:} TensorFlow Lite, YOLO, OpenCV, OCR (Tesseract)
-\item \textbf{Data \& Analysis Libraries:} NumPy, Pandas, Matplotlib
-\item \textbf{Platforms:} Raspberry Pi, Linux (Basic)
+    \setlength\itemsep{1pt}
+    \item \textbf{Languages/Concepts:} Java, Python, C, SQL, OOP, DBMS, Machine Learning, AI
+    \item \textbf{Web \& Tools:} HTML, CSS, JavaScript, React.js, Git, GitHub
+    \item \textbf{AI/CV:} TensorFlow Lite, YOLO, OpenCV, OCR (Tesseract)
+    \item \textbf{Data Libraries:} NumPy, Pandas, Matplotlib
+    \item \textbf{Platforms:} Raspberry Pi, Linux
 \end{itemize}
 
 % ---------------------------------------------------------------
-% 5. KEY PROJECTS
+% 4. KEY PROJECTS
 % ---------------------------------------------------------------
 \sectiontitle{Key Projects}
-\projectentry{Two-Wheeler Helmet Detection System}{Technologies: TensorFlow Lite, Raspberry Pi, OpenCV}
+\projectentry{Two-Wheeler Helmet Detection System}{TensorFlow Lite, Raspberry Pi, OpenCV}
 \begin{itemize}
-\item Developed a real-time helmet detection system to improve rider safety.
-\item Automated ignition lock mechanism based on helmet detection.
-\item Achieved \textbf{85--90\% model accuracy} using a custom-trained TensorFlow Lite model.
-\item Implemented a complete real-time pipeline on Raspberry Pi using OpenCV and servo motor control.
+    \setlength\itemsep{1pt}
+    \item Real-time system to improve rider safety with automated ignition lock; achieved \textbf{85–90\% accuracy}.
+    \item Full pipeline on Raspberry Pi using a custom TensorFlow Lite model and servo motor control.
 \end{itemize}
 
-\projectentry{Smart Audio Description Glasses}{Technologies: Raspberry Pi, OpenCV, OCR}
+\vspace{-4pt} % Reduce space between projects
+\projectentry{Smart Audio Description Glasses}{Raspberry Pi, OpenCV, OCR}
 \begin{itemize}
-\item Built assistive smart glasses for visually impaired users using real-time OCR and object detection.
-\item Integrated text-to-speech functionality, reducing information access time by approximately \textbf{70\%}.
-\item Delivered a fully functional prototype using Raspberry Pi and OpenCV.
+    \setlength\itemsep{1pt}
+    \item Assistive glasses for visually impaired users using real-time OCR and object detection.
+    \item Integrated text-to-speech, reducing information access time by \textbf{∼70\%}; built functional prototype.
 \end{itemize}
 
-\projectentry{Tiger Detection \& Re-Identification System}{Technologies: YOLOv8, ResNet, ORB, Python}
+\vspace{-4pt}
+\projectentry{Tiger Detection \& Re-Identification}{YOLOv8, ResNet, ORB, Python}
 \begin{itemize}
-\item Designed an automated wildlife monitoring system using deep learning models.
-\item Implemented ORB-based feature matching and centroid tracking for re-identification.
-\item Improved recognition reliability by approximately \textbf{40\%} and built an incremental tiger profile database.
+    \setlength\itemsep{1pt}
+    \item Automated wildlife monitoring using deep learning (YOLOv8, ResNet) for detection and feature matching.
+    \item Improved re-identification reliability by \textbf{∼40\%} with ORB-based tracking and profile database.
 \end{itemize}
 
 % ---------------------------------------------------------------
-% 6. CERTIFICATIONS
+% 5. CERTIFICATIONS
 % ---------------------------------------------------------------
 \sectiontitle{Certifications}
-\begin{tabularx}{\textwidth}{X r}
-\textbf{Data Analytics Job Simulation} - Deloitte & September 2025 \\
-\textbf{Software Engineering Job Simulation} - Forage & September 2025 \\
-\textbf{Bring AI to Work Workshop} - Google Workspace Admins & June 2025 \\
-\textbf{Introduction to Prompt Engineering} - Simplilearn & April 2025 \\
-\textbf{Introduction to Generative AI Art of the Possible} - Amazon Web Services (AWS) & August 2024 \\
+\begin{tabularx}{\textwidth}{@{}X r@{}}
+    \textbf{Data Analytics Job Simulation} - Deloitte & Sept 2025 \\
+    \textbf{Software Engineering Job Simulation} - Forage & Sept 2025 \\
+    \textbf{Bring AI to Work Workshop} - Google & June 2025 \\
+    \textbf{Introduction to Prompt Engineering} - Simplilearn & Apr 2025 \\
+    \textbf{Intro to Generative AI} - AWS & Aug 2024 \\
 \end{tabularx}
 
 % ---------------------------------------------------------------
-% 7. EDUCATION
+% 6. EDUCATION
 % ---------------------------------------------------------------
 \sectiontitle{Education}
-\begin{tabularx}{\textwidth}{X r}
-
-\textbf{Btech (Computer Science and Engineering (AI))} 
-& August 2023 -- August 2027 \\
-Vishwakarma Institute of Technology (VIT), Pune, Maharashtra 
-& CGPA: 8.27/10 \\[8pt]
-
-\textbf{Higher Secondary Certificate (HSC)} 
-& August 2021 -- August 2022 \\
-Shri Shivaji Junior College, Chandrapur, Maharashtra 
-& Percentage: 84.83\% \\[8pt]
-
-\textbf{Secondary School Certificate (SSC)} 
-& August 2019 -- August 2020 \\
-Shri Shivaji Junior College, Chandrapur, Maharashtra 
-& Percentage: 90.40\% \\
-
+\begin{tabularx}{\textwidth}{@{}X r@{}}
+    \textbf{BTech, Computer Science and Engineering (AI)} & Aug 2023 -- Aug 2027 \\
+    Vishwakarma Institute of Technology (VIT), Pune & CGPA: 8.27/10 \\[4pt]
+    \textbf{Higher Secondary Certificate (HSC)} & 2021 -- 2022 \\
+    Shri Shivaji Junior College, Chandrapur & Percentage: 84.83\% \\[4pt]
+    \textbf{Secondary School Certificate (SSC)} & 2019 -- 2020 \\
+    Shri Shivaji Junior College, Chandrapur & Percentage: 90.40\% \\
 \end{tabularx}
 
 % ---------------------------------------------------------------
-% LEADERSHIP & RESPONSIBILITY
+% 7. LEADERSHIP & RESPONSIBILITY
 % ---------------------------------------------------------------
-\section{Leadership \& Responsibility}
-
+\sectiontitle{Leadership \& Responsibility}
 \textbf{Multimedia Incharge -- Eklavya Club, VIT Pune}
 \begin{itemize}[leftmargin=*]
-    \item Managed design and social media content for major college events.
-    \item Created posters and promotional material to improve student engagement.
-    \item Handled end-to-end online promotions with timely delivery.
+    \setlength\itemsep{1pt}
+    \item Managed design and social media content for major college events, improving student engagement.
 \end{itemize}
 
 % ---------------------------------------------------------------
-% 8. LANGUAGES
+% End Document
 % ---------------------------------------------------------------
-\sectiontitle{Languages}
-\begin{tabularx}{\textwidth}{X r}
-\textbf{English} & Full Professional Proficiency \\
-\textbf{Hindi} & Native or Bilingual Proficiency \\
-\textbf{Marathi} & Native or Bilingual Proficiency \\
-\end{tabularx}
-
-% ---------------------------------------------------------------
-% NOTES: FORMATTING & ATS OPTIMIZATION
-% ---------------------------------------------------------------
-% - Reformatted to use the Latin Modern font instead of Helvetica.
-% - Robust bullet points with dynamic action verbs and quantifiable metrics enhance recruiter appeal.
-% - Standard section headings and clear tool names ensure ATS compatibility.
 \end{document}
-
